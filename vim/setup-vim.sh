@@ -1,33 +1,29 @@
-#!/bin/sh
-if [ -d ~/.vim ]; then
-    echo "Moving .vim to .vimold"
-    mv ~/.vim ~/.vimold
-    echo "Making a new .vim"
-    mkdir ~/.vim
-fi
+#!/bin/bash
+echo "This will destroy .vim, .vimrc and .gvimrc! Are you sure?"
+select yn in "Yes" "No"; do
+  case $yn in
+    Yes ) break;;
+    No ) exit;;
+  esac
+done
+
+rm -rf ~/.vim
+mkdir ~/.vim
 
 echo "Installing pathogen for VIM package management"
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
 
-echo "Installing vimrc from Dropbox"
-if [ -e ~/.vimrc ] ; then 
-    echo "    backing up existing vimrc to ~/.vimrc.bak"
-    mv ~/.vimrc ~/.vimrc.bak
-fi
-echo "    copying Dropbox vimrc to ~/.vimrc"
-cp ~/Dropbox/vim/vimrc ~/.vimrc
+echo "Installing vimrc"
+echo "    copying vimrc to ~/.vimrc"
+cp vimrc ~/.vimrc
 
-echo "Installing gvimrc from Dropbox"
-if [ -e ~/.gvimrc ] ; then 
-    echo "    backing up existing gvimrc to ~/.gvimrc.bak"
-    mv ~/.gvimrc ~/.gvimrc.bak
-fi
-echo "    copying Dropbox gvimrc to ~/.gvimrc"
-cp ~/Dropbox/vim/gvimrc ~/.gvimrc
+echo "Installing gvimrc"
+echo "    copying gvimrc to ~/.gvimrc"
+cp gvimrc ~/.gvimrc
 
 echo "Installing bundle install script to ~/.vim/bundle"
-cp ~/Dropbox/vim/bundle-install.sh ~/.vim/bundle
+cp bundle-install.sh ~/.vim/bundle
 chmod +x ~/.vim/bundle/bundle-install.sh
 
 echo "Running bundle install..."
