@@ -1,0 +1,24 @@
+" pathogen bundles
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+set cindent
+set smartindent
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set visualbell
+
+set ruler
+set hlsearch
+set noexpandtab
+
+set clipboard=unnamed
+
+set background=dark
+colorscheme solarized
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+autocmd BufWritePre * :%s/\s\+$//e
