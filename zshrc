@@ -8,6 +8,7 @@ export PATH="/usr/local/bin:$PATH"
 export EDITOR='mate -w'
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.tmuxinator.zsh
 
 # for Homebrew installed rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
