@@ -5,7 +5,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git bundler brew gem rbates)
 
 export PATH="/usr/local/bin:$PATH"
-export EDITOR='mate -w'
+export EDITOR="vim"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.tmuxinator.zsh
