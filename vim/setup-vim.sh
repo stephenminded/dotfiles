@@ -11,8 +11,8 @@ rm -rf ~/.vim
 mkdir ~/.vim
 
 echo "Installing pathogen for VIM package management"
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 echo "Installing vimrc"
 echo "    copying vimrc to ~/.vimrc"

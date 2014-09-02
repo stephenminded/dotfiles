@@ -1,6 +1,6 @@
-set guioptions-=T " hide toolbar
-set lines=55 columns=100
-
-colorscheme railscasts
-
-set guifont=DejaVu\ Sans\ Mono:h13
+set go-=T
+set bg=dark
+if &background == "dark"
+	hi normal guibg=black
+	set transp=8
+endif
