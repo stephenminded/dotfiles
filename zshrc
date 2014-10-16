@@ -18,3 +18,7 @@ eval `dircolors ~/.dircolors.256dark`
 alias b="bundle exec"
 alias bails="bundle exec rails"
 alias bake="bundle exec rake"
+alias tmux="TERM=screen-256color-bce tmux"
+alias gs="git status"
+alias gd="git diff"
+

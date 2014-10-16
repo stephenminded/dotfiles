@@ -22,6 +22,9 @@ set hlsearch
 set clipboard=unnamed
 
 set background=dark
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termcolors = 256
 colorscheme solarized
 
 autocmd VimEnter * NERDTree
