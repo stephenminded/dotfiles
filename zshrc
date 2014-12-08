@@ -10,6 +10,9 @@ export EDITOR="vim"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.tmuxinator.zsh
 
+#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+stty -ixon
+
 # for Homebrew installed rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
