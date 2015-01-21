@@ -20,5 +20,8 @@ refresh https://github.com/kien/ctrlp.vim.git                   ctrlp.vim
 refresh https://github.com/kchmck/vim-coffee-script.git         vim-coffee-script
 refresh https://github.com/AndrewRadev/vim-eco.git              vim-eco
 refresh https://github.com/rking/ag.vim                         ag
+refresh https://github.com/wikitopian/hardmode                  hardmode
+refresh https://github.com/christoomey/vim-tmux-runner.git      vtr
+refresh https://github.com/stephenminded/vim-spec-runner        vim-spec-runner
 # https://github.com/garbas/vim-snipmate
 cd -

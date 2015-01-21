@@ -7,6 +7,7 @@ set cindent
 set smartindent
 set autoindent
 set visualbell
+set incsearch
 
 " Show line numbers
 set number
@@ -31,9 +32,15 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd BufWritePre * :%s/\s\+$//e
 
+let g:spec_runner_dispatcher = 'VtrSendCommandToRunner! {command}'
+
 " Leader commands
 let mapleader = ","
 map <Leader>t :NERDTreeToggle<CR>
+map <leader>h <esc>:call ToggleHardMode()<CR>
+map <leader>r <Plug>RunFocusedSpec
+map <leader>R <Plug>RunCurrentSpecFile
+map <leader>e <Plug>RunMostRecentSpec
 
 " From http://robots.thoughtbot.com/faster-grepping-in-vim
 " The Silver Searcher
