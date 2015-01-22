@@ -31,6 +31,7 @@ colorscheme solarized
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd VimLeave * VtrKillRunner
 
 let g:spec_runner_dispatcher = 'VtrSendCommandToRunner! {command}'
 
@@ -41,6 +42,7 @@ map <leader>h <esc>:call ToggleHardMode()<CR>
 map <leader>r <Plug>RunFocusedSpec
 map <leader>R <Plug>RunCurrentSpecFile
 map <leader>e <Plug>RunMostRecentSpec
+map <leader>E :VtrSendCommandToRunner! m<CR>
 
 " From http://robots.thoughtbot.com/faster-grepping-in-vim
 " The Silver Searcher
