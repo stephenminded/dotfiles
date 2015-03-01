@@ -23,5 +23,8 @@ refresh https://github.com/rking/ag.vim                         ag
 refresh https://github.com/wikitopian/hardmode                  hardmode
 refresh https://github.com/christoomey/vim-tmux-runner.git      vtr
 refresh https://github.com/stephenminded/vim-spec-runner        vim-spec-runner
+refresh https://github.com/tpope/vim-rails.git                  vim-rails
 # https://github.com/garbas/vim-snipmate
+# Tcomment?
+
 cd -
