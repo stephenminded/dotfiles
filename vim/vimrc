@@ -8,6 +8,7 @@ set smartindent
 set autoindent
 set visualbell
 set incsearch
+set relativenumber
 
 " Show line numbers
 set number
