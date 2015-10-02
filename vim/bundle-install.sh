@@ -20,10 +20,15 @@ refresh https://github.com/kien/ctrlp.vim.git                   ctrlp.vim
 refresh https://github.com/kchmck/vim-coffee-script.git         vim-coffee-script
 refresh https://github.com/AndrewRadev/vim-eco.git              vim-eco
 refresh https://github.com/rking/ag.vim                         ag
-refresh https://github.com/wikitopian/hardmode                  hardmode
 refresh https://github.com/christoomey/vim-tmux-runner.git      vtr
 refresh https://github.com/stephenminded/vim-spec-runner        vim-spec-runner
+refresh https://github.com/bling/vim-airline.git                vim-airline
+
+refresh https://github.com/vim-ruby/vim-ruby.git                vim-ruby
 refresh https://github.com/tpope/vim-rails.git                  vim-rails
+refresh https://github.com/kana/vim-textobj-user.git            vim-textobj-user
+refresh https://github.com/nelstrom/vim-textobj-rubyblock.git   vim-textobj-rubyblock
+
 # https://github.com/garbas/vim-snipmate
 # Tcomment?
 

@@ -2,7 +2,11 @@
 execute pathogen#infect()
 call pathogen#helptags()
 syntax on
-filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
+
+set nocompatible
 set cindent
 set smartindent
 set autoindent
@@ -39,11 +43,12 @@ let g:spec_runner_dispatcher = 'VtrSendCommandToRunner! {command}'
 " Leader commands
 let mapleader = ","
 map <Leader>t :NERDTreeToggle<CR>
-map <leader>h <esc>:call ToggleHardMode()<CR>
 map <leader>r <Plug>RunFocusedSpec
 map <leader>R <Plug>RunCurrentSpecFile
 map <leader>e <Plug>RunMostRecentSpec
 map <leader>E :VtrSendCommandToRunner! m<CR>
+
+nmap =j :%!python -m json.tool<CR>
 
 " From http://robots.thoughtbot.com/faster-grepping-in-vim
 " The Silver Searcher
