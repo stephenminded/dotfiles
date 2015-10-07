@@ -49,6 +49,7 @@ map <leader>e <Plug>RunMostRecentSpec
 map <leader>E :VtrSendCommandToRunner! m<CR>
 
 nmap =j :%!python -m json.tool<CR>
+nmap <Space> i_<Esc>r
 
 " From http://robots.thoughtbot.com/faster-grepping-in-vim
 " The Silver Searcher
