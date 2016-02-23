@@ -24,4 +24,5 @@ alias bake="bundle exec rake"
 alias tmux="TERM=screen-256color-bce tmux"
 alias gs="git status"
 alias gd="git diff"
+alias gitamend="git commit --amend --reuse-message=HEAD"
 
