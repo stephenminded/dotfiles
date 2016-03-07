@@ -18,11 +18,13 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 eval `dircolors ~/.dircolors.256dark`
 
+export PRY=1
 alias b="bundle exec"
 alias bails="bundle exec rails"
 alias bake="bundle exec rake"
 alias tmux="TERM=screen-256color-bce tmux"
 alias gs="git status"
 alias gd="git diff"
-alias gitamend="git commit --amend --reuse-message=HEAD"
+alias gco="git checkout"
+alias vimclean="find . -iname '*.swp' | xargs rm"
 
