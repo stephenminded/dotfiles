@@ -30,6 +30,7 @@ refresh https://github.com/tpope/vim-rails.git                  vim-rails
 refresh https://github.com/kana/vim-textobj-user.git            vim-textobj-user
 refresh https://github.com/nelstrom/vim-textobj-rubyblock.git   vim-textobj-rubyblock
 
+refresh https://github.com/lambdatoast/elm.vim.git              elm.vim
 # https://github.com/garbas/vim-snipmate
 # Tcomment?
 
