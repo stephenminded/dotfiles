@@ -16,8 +16,6 @@ stty -ixon
 # for Homebrew installed rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-eval `dircolors ~/.dircolors.256dark`
-
 export PRY=1
 alias b="bundle exec"
 alias bails="bundle exec rails"
@@ -28,3 +26,8 @@ alias gd="git diff"
 alias gco="git checkout"
 alias vimclean="find . -iname '*.swp' | xargs rm"
 
+export NVM_DIR="~/.nvm"
+export ELM_MODE="~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source /opt/dev/dev.sh
