@@ -30,9 +30,9 @@ set hlsearch
 set clipboard=unnamed
 
 set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors = 256
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+" let g:solarized_termcolors = 256
 colorscheme deus
 
 let g:NERDTreeHijackNetrw=0
@@ -92,6 +92,6 @@ function! QuickFixToggle()
   endfor
   copen
 endfunction
-nnoremap <c-q> :call QuickFixToggle()<cr>
+nnoremap <c-;> :call QuickFixToggle()<cr>
 
 runtime macros/matchit.vim
