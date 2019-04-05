@@ -1,6 +1,27 @@
-" pathogen bundles
-execute pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'ajmwagar/vim-deus'
+
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-rhubarb'
+
+Plug 'janko/vim-test'
+Plug 'benmills/vimux'
+
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
+call plug#end()
+
 syntax on
 filetype on
 filetype plugin on
@@ -35,43 +56,39 @@ set background=dark
 " let g:solarized_termcolors = 256
 colorscheme deus
 
-let g:NERDTreeHijackNetrw=0
-
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 autocmd BufWritePre * :%s/\s\+$//e
-autocmd VimLeave * VtrKillRunner
-
-let g:spec_runner_dispatcher = 'VtrSendCommandToRunner! {command}'
 
 " Leader commands
 let mapleader = ","
-map <Leader>t :NERDTreeToggle<CR>
-map <leader>r <Plug>RunFocusedSpec
-map <leader>R <Plug>RunCurrentSpecFile
-map <leader>e <Plug>RunMostRecentSpec
-map <leader>E :VtrSendCommandToRunner! m<CR>
+
+" vim-test setup
+noremap <leader>r :TestNearest<CR>
+noremap <leader>R :TestFile<CR>
+noremap <leader>e :TestLast<CR>
+noremap <leader>E :TestVisit<CR>
+
 " Convert hash rockets to new syntax
 nnoremap <leader>{ :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
+
+" ctrl-p fuzzy find with fzf.vim
+nnoremap <C-p> :Files<Cr>
 
 nmap =j :%!python -m json.tool<CR>
 nmap <Space> i_<Esc>r
 
 " From http://robots.thoughtbot.com/faster-grepping-in-vim
-" The Silver Searcher
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
-
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+endif
 
-  " bind \ (backward slash) to grep shortcut
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-  nnoremap \ :Ag<SPACE>
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
 " bind K to grep word under cursor
