@@ -20,6 +20,8 @@ Plug 'tpope/vim-rails'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
+Plug 'jceb/vim-orgmode'
+
 call plug#end()
 
 syntax on
@@ -56,22 +58,36 @@ set background=dark
 " let g:solarized_termcolors = 256
 colorscheme deus
 
+" let g:NERDTreeHijackNetrw=0
+
+" autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd VimLeave * VtrKillRunner
+
+let g:spec_runner_dispatcher = 'VtrSendCommandToRunner! {command}'
 
 " Leader commands
 let mapleader = ","
 
 " vim-test setup
-noremap <leader>r :TestNearest<CR>
-noremap <leader>R :TestFile<CR>
-noremap <leader>e :TestLast<CR>
+noremap <leader>r :wa<CR>:TestNearest<CR>
+noremap <leader>R :wa<CR>:TestFile<CR>
+noremap <leader>e :wa<CR>:TestLast<CR>
 noremap <leader>E :TestVisit<CR>
+let test#strategy = "vimux"
+
+noremap <C-j> <C-w><C-j>
+noremap <C-k> <C-w><C-k>
+noremap <C-h> <C-w><C-h>
+noremap <C-l> <C-w><C-l>
 
 " Convert hash rockets to new syntax
 nnoremap <leader>{ :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
 
 " ctrl-p fuzzy find with fzf.vim
 nnoremap <C-p> :Files<Cr>
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 nmap =j :%!python -m json.tool<CR>
 nmap <Space> i_<Esc>r
