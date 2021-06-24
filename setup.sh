@@ -15,4 +15,6 @@ if ! command -v fzf &> /dev/null; then
   sudo apt-get install -y fzf
 fi
 
+vim +PlugInstall +qall
+
 source ~/.zshrc
