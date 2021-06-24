@@ -1,0 +1,17 @@
+#!/bin/bash
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/colors/deus.vim --create-dirs https://raw.githubusercontent.com/ajmwagar/vim-deus/master/colors/deus.vim
+
+ln -sf ~/dotfiles/vimrc ~/.vimrc
+ln -sf ~/dotfiles/zshrc ~/.zshrc
+ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/dircolors.256dark ~/.dircolors.256dark
+
+if ! command -v rg &> /dev/null; then
+  sudo apt-get install -y ripgrep
+fi
+
+if ! command -v fzf &> /dev/null; then
+  sudo apt-get install -y fzf
+fi

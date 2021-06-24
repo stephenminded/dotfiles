@@ -55,8 +55,10 @@ set clipboard=unnamed
 set background=dark
 " let g:solarized_visibility = "high"
 " let g:solarized_contrast = "high"
-" let g:solarized_termcolors = 256
+set t_Co=256
+let g:solarized_termcolors = 256
 colorscheme deus
+
 
 " let g:NERDTreeHijackNetrw=0
 

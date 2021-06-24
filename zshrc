@@ -65,7 +65,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source /opt/dev/dev.sh
 
 # User configuration
 
@@ -103,5 +102,9 @@ alias gs="git status"
 alias gd="git diff"
 alias gco="git checkout"
 alias vimclean="find . -iname '*.swp' | xargs rm"
+alias weather="curl http://v2.wttr.in"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
